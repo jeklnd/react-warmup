@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Warmup</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+
+    <!-- Hosted stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local stylesheets -->
+    <link rel="stylesheet" href="./styles/prism.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><h4>React Warmup</h4></li>
+          <li><a href="">Promises</a></li>
+          <li><a href="">Work</a></li>
+          <li><a href="">Contact</a></li>
+          <li><button href="">Blog</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="landing">
+        <div class="container">
+          <h1>Why does this website exist?</h1>
+          <p>
+            This website stores examples of JavaScript concepts in action. I
+            chose concepts the are prerequisites to learning the React library.
+          </p>
+        </div>
+      </section>
+      <section id="promises">
+        <div class="container">
+          <h1>Promises</h1>
+          <h2>What are promises?</h2>
+          <pre>
+
+            A promise is an object. At the most basic level:</pre
+          >
+          <pre><code class="language-javascript">
+            const myPromise = new Promise((resolve, reject) => {
+                // condition
+            });</code>
+          </pre>
+          <pre>
+*The code above is styled with PrismJS using their Normalize Whitespace plugin.
+
+        </pre
+          >
+          <h2>So, how do we work with promises?</h2>
+          <pre><code class="language-javascript">
+            const myPromise = new Promise((resolve, reject) => {
+                let yourNumber = document.getElementById("yourNumber").innerHTML;
+                if (yourNumber === "42") {
+                  resolve(yourNumber);
+                } else {
+                  reject(yourNumber);
+                }
+              });
+            
+              myPromise
+                .then((value) => {
+                  alert(`The universe is yours! Your number is ${value}.`);
+                })
+                .catch((value) => {
+                  alert(`Not yet the universe is yours you see. Your number is ${value}.`);
+                });</code>
+        </pre>
+          <pre>
+            To demo the functionality, change your number using the form below:
+
+        </pre
+          >
+
+          <label for="number">Your number:</label>
+          <div id="yourNumber">0</div>
+          <input
+            id="newNumber"
+            type="number"
+            name="number"
+            placeholder="The secret number is 42."
+          />
+          <br />
+          <button id="promiseButton" type="button" onclick="work()">
+            Change your number
+          </button>
+          <pre>
+
+            Let's understand the code:
+
+                1.) We construct a Promise object arbitrarily named "myPromise" and simultaneously call a function with two arguments–resolve and reject.
+                2.) The function gets the value of your number.
+                3.) The function checks if your number === "42". If yes, the promise resolves. If no, the promise rejects.
+                4a.) If the promise resolves, then only all .then() methods from the myPromise chain will be called, sending us an alert in the browser.
+                4b.) If the promise rejects, then only the .catch() method from the myPromise chain will be called, sending us an alert in the browser.
+                
+                And now we can see the value of promises.
+
+                With promises, we can handle errors and chain callback functions together that execute depending on whether the previous callback functions executed successfully or not.
+                
+        </pre>
+        <h2>map()</h2>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <p>Copyright © Jesse Krensel | 2023</p>
+      </div>
+    </footer>
+    <script src="./prism.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

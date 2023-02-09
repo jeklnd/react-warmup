@@ -1,0 +1,195 @@
+/******************************************************************
+
+Base Styles
+
+******************************************************************/
+:root {
+  --max-width: 1280px;
+  --dark: #5d5c61;
+  --light: #ebebeb;
+  --primary: #557a95;
+  --secondary: #7395ae;
+  --accent: #b1a296;
+  --font-one: "Montserrat", sans-serif;
+  --font-two: "Esteban", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: clamp(1rem, 0.917rem + 0.417vw, 1.25rem);
+  line-height: 1.5;
+  font-family: var(--font-two);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--max-width);
+    margin: auto;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-family: var(--font-one);
+}
+
+/* scale: 1.250 */
+h1 {
+  font-size: clamp(1rem, 0.062rem + 4.692vw, 3.815rem);
+}
+h2 {
+  font-size: clamp(1rem, 0.316rem + 3.42vw, 3.052rem);
+}
+h3 {
+  font-size: clamp(1rem, 0.52rem + 2.402vw, 2.441rem);
+}
+h4 {
+  font-size: clamp(1rem, 0.682rem + 1.588vw, 1.953rem);
+}
+h5 {
+  font-size: clamp(1rem, 0.812rem + 0.938vw, 1.563rem);
+}
+h6 {
+  font-size: clamp(1rem, 0.917rem + 0.417vw, 1.25rem);
+}
+
+pre {
+  white-space: pre-line;
+  font-family: var(--font-two);
+}
+/******************************************************************
+
+Navigation
+
+******************************************************************/
+header {
+  background-color: var(--dark);
+}
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  color: var(--light);
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  list-style: none;
+  padding: 0 2rem;
+}
+
+/* nav logo/header styling */
+nav li:first-child {
+  margin-right: auto;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: var(--font-one);
+  color: var(--light);
+}
+
+nav a:hover,
+nav a:active {
+  color: var(--primary);
+}
+
+nav button {
+  padding: 0.5rem 2rem;
+  font-family: var(--font-one);
+  background-color: var(--primary);
+  color: var(--light);
+  border-radius: 8px;
+  border: 0;
+  transition: 0.2s ease-in-out;
+}
+
+nav button:hover,
+nav button:active {
+  background-color: var(--light);
+  color: var(--primary);
+  font-weight: 600;
+}
+/******************************************************************
+
+Main
+
+******************************************************************/
+main {
+  padding: 2rem 2rem;
+  min-height: 100vh;
+}
+
+main h1 {
+    padding: 1rem 0;
+}
+
+section {
+  padding: 2rem 2rem;
+}
+
+/******************************************************************
+
+Footer
+
+******************************************************************/
+footer {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--dark);
+}
+
+footer div {
+  text-align: center;
+  color: var(--light);
+}
